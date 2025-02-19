@@ -1,0 +1,380 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.9)  9 FEB 2025 23:44
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./TP2.tex
+(TP2.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+For additional information on amsmath, use the `?' option.
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen143
+))
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen144
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen145
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks19
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks20
+\eqnshift@=\dimen146
+\alignsep@=\dimen147
+\tagshift@=\dimen148
+\tagwidth@=\dimen149
+\totwidth@=\dimen150
+\lineht@=\dimen151
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks23
+\verbatim@line=\toks24
+\verbatim@in@stream=\read2
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count273
+\float@exts=\toks25
+\float@box=\box53
+\@float@everytoks=\toks26
+\@floatcapt=\box54
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen152
+\captionmargin=\dimen153
+\caption@leftmargin=\dimen154
+\caption@rightmargin=\dimen155
+\caption@width=\dimen156
+\caption@indent=\dimen157
+\caption@parindent=\dimen158
+\caption@hangindent=\dimen159
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count274
+\c@continuedfloat=\count275
+Package caption Info: float package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count276
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count277
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count278
+\l__pdf_internal_box=\box55
+) (C:/Users\quent\Desktop\github\analyse-de-donnee\auxil\TP2.aux)
+\openout1 = `TP2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count279
+\scratchdimen=\dimen160
+\scratchbox=\box56
+\nofMPsegments=\count280
+\nofMParguments=\count281
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count282
+\MPscratchDim=\dimen161
+\MPnumerator=\count283
+\makeMPintoPDFobject=\count284
+\everyMPtoPDFconversion=\toks28
+)
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\quent\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+<img/robbery_data_boxplot.png, id=1, 444.91219pt x 274.77657pt>
+File: img/robbery_data_boxplot.png Graphic file (type png)
+<use img/robbery_data_boxplot.png>
+Package pdftex.def Info: img/robbery_data_boxplot.png  used on input line 36.
+(pdftex.def)             Requested size: 172.5pt x 106.53351pt.
+ [1
+
+{C:/Users/quent/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/robber
+y_data_boxplot.png>]
+Overfull \hbox (11.51224pt too wide) in paragraph at lines 60--61
+[]\OT1/cmr/bx/n/10 Les crimes con-tre les bi-ens \OT1/cmr/m/n/10 (Bur-glary, La
+rceny, Auto) mon-trent ^^Segalement
+ []
+
+<img/plotcrimacp.png, id=14, 453.94594pt x 358.33875pt>
+File: img/plotcrimacp.png Graphic file (type png)
+<use img/plotcrimacp.png>
+Package pdftex.def Info: img/plotcrimacp.png  used on input line 83.
+(pdftex.def)             Requested size: 172.5pt x 136.17014pt.
+[2]
+<img/bowplotcrimeacpscore.png, id=19, 451.6875pt x 338.01282pt>
+File: img/bowplotcrimeacpscore.png Graphic file (type png)
+<use img/bowplotcrimeacpscore.png>
+Package pdftex.def Info: img/bowplotcrimeacpscore.png  used on input line 93.
+(pdftex.def)             Requested size: 172.5pt x 129.0909pt.
+<img/bigplotcrimeacp.png, id=20, 380.17032pt x 394.47375pt>
+File: img/bigplotcrimeacp.png Graphic file (type png)
+<use img/bigplotcrimeacp.png>
+Package pdftex.def Info: img/bigplotcrimeacp.png  used on input line 99.
+(pdftex.def)             Requested size: 172.5pt x 178.99226pt.
+ [3 <./img/plotcrimacp.png> <./img/bowplotcrimeacpscore.png>]
+<img/bigplotcrimeacp2.png, id=26, 335.75438pt x 378.66469pt>
+File: img/bigplotcrimeacp2.png Graphic file (type png)
+<use img/bigplotcrimeacp2.png>
+Package pdftex.def Info: img/bigplotcrimeacp2.png  used on input line 105.
+(pdftex.def)             Requested size: 172.5pt x 194.54358pt.
+
+Overfull \hbox (2.97859pt too wide) in paragraph at lines 109--109
+[]\OT1/cmr/bx/n/10 Identification des valeurs atyp-iques sur la troisi^^Reme co
+m-posante 
+ []
+
+[4 <./img/bigplotcrimeacp.png> <./img/bigplotcrimeacp2.png>]
+<img/bigplotcrimeacp3.png, id=32, 379.4175pt x 372.64218pt>
+File: img/bigplotcrimeacp3.png Graphic file (type png)
+<use img/bigplotcrimeacp3.png>
+Package pdftex.def Info: img/bigplotcrimeacp3.png  used on input line 121.
+(pdftex.def)             Requested size: 172.5pt x 169.42168pt.
+<img/bigplotcrimeacp4.png, id=33, 359.09157pt x 373.395pt>
+File: img/bigplotcrimeacp4.png Graphic file (type png)
+<use img/bigplotcrimeacp4.png>
+Package pdftex.def Info: img/bigplotcrimeacp4.png  used on input line 127.
+(pdftex.def)             Requested size: 207.0021pt x 215.25311pt.
+ [5 <./img/bigplotcrimeacp3.png> <./img/bigplotcrimeacp4.png>]
+Overfull \hbox (6.5268pt too wide) in paragraph at lines 156--157
+[]\OT1/cmr/bx/n/10 CONFORT \OT1/cmr/m/n/10 : Niveau de con-fort not^^Se sur une
+ ^^Sechelle (quan-ti-ta-tive discr^^Rete). 
+ []
+
+<img/summaryhotel.png, id=39, 640.64343pt x 237.13594pt>
+File: img/summaryhotel.png Graphic file (type png)
+<use img/summaryhotel.png>
+Package pdftex.def Info: img/summaryhotel.png  used on input line 170.
+(pdftex.def)             Requested size: 207.0021pt x 76.61957pt.
+<img/covhotel.png, id=40, 532.99126pt x 137.01187pt>
+File: img/covhotel.png Graphic file (type png)
+<use img/covhotel.png>
+Package pdftex.def Info: img/covhotel.png  used on input line 178.
+(pdftex.def)             Requested size: 207.0021pt x 53.2128pt.
+[6 <./img/summaryhotel.png>]
+<img/pairhotel.png, id=45, 453.19313pt x 474.27188pt>
+File: img/pairhotel.png Graphic file (type png)
+<use img/pairhotel.png>
+Package pdftex.def Info: img/pairhotel.png  used on input line 199.
+(pdftex.def)             Requested size: 207.0021pt x 216.62627pt.
+ [7 <./img/covhotel.png> <./img/pairhotel.png>]
+<img/inertie_expliquee.png, id=53, 408.77719pt x 468.24937pt>
+File: img/inertie_expliquee.png Graphic file (type png)
+<use img/inertie_expliquee.png>
+Package pdftex.def Info: img/inertie_expliquee.png  used on input line 217.
+(pdftex.def)             Requested size: 207.0021pt x 237.11781pt.
+<img/inertie_cumulee.png, id=54, 395.22656pt x 469.755pt>
+File: img/inertie_cumulee.png Graphic file (type png)
+<use img/inertie_cumulee.png>
+Package pdftex.def Info: img/inertie_cumulee.png  used on input line 223.
+(pdftex.def)             Requested size: 207.0021pt x 246.03731pt.
+
+[8 <./img/inertie_expliquee.png>]
+
+LaTeX Warning: File `img/PCA1.' not found on input line 236.
+
+
+TP2.tex:236: LaTeX Error: Unknown graphics extension: ..
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236 ...egraphics[width=0.6\linewidth]{img/PCA1.}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<img/PCA2.png, id=59, 420.82219pt x 233.37187pt>
+File: img/PCA2.png Graphic file (type png)
+<use img/PCA2.png>
+Package pdftex.def Info: img/PCA2.png  used on input line 242.
+(pdftex.def)             Requested size: 207.0021pt x 114.79477pt.
+[9 <./img/inertie_cumulee.png>]
+<img/PCA4.png, id=64, 431.36156pt x 435.87843pt>
+File: img/PCA4.png Graphic file (type png)
+<use img/PCA4.png>
+Package pdftex.def Info: img/PCA4.png  used on input line 250.
+(pdftex.def)             Requested size: 207.0021pt x 209.16606pt.
+<img/PCA3.png, id=65, 423.83344pt x 432.86719pt>
+File: img/PCA3.png Graphic file (type png)
+<use img/PCA3.png>
+Package pdftex.def Info: img/PCA3.png  used on input line 256.
+(pdftex.def)             Requested size: 207.0021pt x 211.41324pt.
+ [10 <./img/PCA2.png> <./img/PCA4.png>]
+Overfull \hbox (2.30434pt too wide) in paragraph at lines 267--268
+[]\OT1/cmr/m/n/10 Les vari-ables con-tin-ues les plus corr^^Seles sont \OT1/cmr
+/bx/n/10 CUI-SINE \OT1/cmr/m/n/10 (0.89), \OT1/cmr/bx/n/10 PRIX
+ []
+
+<img/PlotPCA1.png, id=71, 424.58624pt x 277.78781pt>
+File: img/PlotPCA1.png Graphic file (type png)
+<use img/PlotPCA1.png>
+Package pdftex.def Info: img/PlotPCA1.png  used on input line 290.
+(pdftex.def)             Requested size: 207.0021pt x 135.43053pt.
+<img/PlotPCA2.png, id=72, 423.08063pt x 278.54062pt>
+File: img/PlotPCA2.png Graphic file (type png)
+<use img/PlotPCA2.png>
+Package pdftex.def Info: img/PlotPCA2.png  used on input line 295.
+(pdftex.def)             Requested size: 207.0021pt x 136.28207pt.
+[11 <./img/PCA3.png>]
+Overfull \hbox (48.82072pt too wide) in paragraph at lines 303--303
+[]\OT1/cmr/bx/n/12 ACP avec vari-ables qual-i-ta-tive et quan-ti-ta-tive suppl^
+^Sementaires 
+ []
+
+[12 <./img/PlotPCA1.png> <./img/PlotPCA2.png>]
+(C:/Users\quent\Desktop\github\analyse-de-donnee\auxil\TP2.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 3802 strings out of 474485
+ 66741 string characters out of 5743735
+ 1932542 words of memory out of 5000000
+ 26087 multiletter control sequences out of 15000+600000
+ 564608 words of font info for 59 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 67i,7n,77p,281b,311s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\quent\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1000.pk><C:/Users/quent/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><C:/Users/quent/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Users/quent/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/quent/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/quent/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/quent/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/quent/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on C:/Users\quent\Desktop\github\analyse-de-donnee\out\TP2.pdf (
+12 pages, 575014 bytes).
+PDF statistics:
+ 116 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+
