@@ -1,0 +1,123 @@
+---
+title: "Analyse en Composantes Principales (ACP)"
+author: "Analyse R"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, tidy = TRUE, comment = NA)
+knitr::opts_chunk$set(tidy = TRUE, comment = NA)
+```
+
+# 1 Données départements : ACP et AFD
+## 1.2 Analyse en Composantes Principales (ACP)
+### Chargement des Bibliothèques
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org/"))
+library(factoextra)
+library(ggplot2)
+```
+
+### 1.2.1/2 Chargement des Données
+```{r, fig.align = "center"}
+dpt <- read.table("C:/Users/quent/Desktop/github/analyse-de-donnee/TP3/depart.dat",
+                  header = FALSE, sep = "", strip.white = TRUE)
+
+colnames(dpt) <- c("NumDep", "CodeDep", "CodeReg",
+                   "TXCR", "ETRA", "URBR",
+                   "JEUN", "AGE", "CHOM",
+                   "AGRI", "ARTI", "CADR",
+                   "EMPL", "OUVR", "PROF",
+                   "FISC", "CRIM", "FE90")
+
+dpt0 <- dpt[, c("TXCR", "ETRA", "URBR",
+                "JEUN", "AGE", "CHOM",
+                "AGRI", "ARTI", "CADR",
+                "EMPL", "OUVR", "PROF",
+                "FISC", "CRIM", "FE90")]
+```
+
+### 1.2.3 Réalisation de l'ACP
+```{r, fig.align = "center"}
+dpt.acp <- prcomp(dpt0, scale = TRUE)
+```
+
+### 1.2.4/5 Justification du nombre d'axes et représentations graphiques
+#### Scree Plot des valeurs propres
+```{r, fig.align = "center"}
+plot(dpt.acp, type = "l", main = "Scree Plot (Valeurs Propres)")
+```
+
+#### Analyse des valeurs propres et variance expliquée
+```{r}
+eigenvalues <- dpt.acp$sdev^2
+variance_explained <- eigenvalues / sum(eigenvalues) * 100
+cumulative_variance <- cumsum(variance_explained)
+
+data.frame(Axes = 1:length(eigenvalues),
+           Eigenvalues = eigenvalues,
+           Variance = variance_explained,
+           CumulativeVariance = cumulative_variance)
+```
+
+### Interprétation des résultats
+- **Le Scree Plot** montre que la courbe décroît fortement au début puis se stabilise après environ 4 ou 5 axes, indiquant qu’ils expliquent la majorité de la variance.
+- **Les valeurs propres** indiquent que :
+- La **première composante** explique **44.82%** de la variance.
+- La **deuxième composante** en explique **22.22%**.
+- La **troisième composante** en explique **8.86%**.
+- La **quatrième composante** en explique **6.57%**.
+- La **cinquième composante** en explique **4.03%**.
+- En cumulant les cinq premières composantes, **on atteint 86.46% de la variance totale expliquée**.
+
+### 1.2.6 Interprétation des axes
+#### Contributions des variables aux axes principaux
+```{r}
+var <- get_pca_var(dpt.acp)
+var$contrib  # Affiche la contribution des variables aux composantes principales
+```
+
+
+### Analyse des résultats des variables et individus
+#### Cercle des corrélations (relation entre variables et axes)
+```{r, fig.align = "center", fig.height = 3.5}
+par(mfrow = c(2, 2))
+fviz_pca_var(dpt.acp, axes = c(1, 2), col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+fviz_pca_var(dpt.acp, axes = c(3, 4), col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+fviz_pca_var(dpt.acp, axes = c(5, 6), col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+par(mfrow = c(1, 1))
+```
+
+#### Projection des individus sur plusieurs axes
+```{r, fig.align = "center", fig.height = 3.5}
+par(mfrow = c(2, 2))
+fviz_pca_ind(dpt.acp, axes = c(1, 2), repel = TRUE, col.ind = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+fviz_pca_ind(dpt.acp, axes = c(3, 4), repel = TRUE, col.ind = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+fviz_pca_ind(dpt.acp, axes = c(5, 6), repel = TRUE, col.ind = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+par(mfrow = c(1, 1))
+```
+
+### Conclusion générale
+- Le cos carré est une mesure de la qualité de la représentation des variables et des individus sur les axes.
+- La visualisation des **corrélations des variables** et des **projections des individus** sur plusieurs paires d'axes permet d'avoir une compréhension plus fine des dimensions retenues.
+- Les différents axes opposent divers aspects des départements :
+- **Dim1 semble être une opposition entre les zones urbaines et rurales :**
+  - URBR, CADR et FISC à gauche sont associés aux zones urbaines avec une forte fiscalité et un taux de criminalité plus élevé.
+  - AGRI, AGE, OUVR à droite sont plus liés aux zones rurales avec une population plus âgée et plus d’ouvriers.
+- **Dim2 semble opposer une structure démographique basée sur l’âge :**
+  - JEUN et FE90 en bas indiquent une population jeune avec un fort taux de fécondité.
+  - AGE et ARTI en haut indiquent une population plus âgée.
+- **Dim 3 semble opposer les départements ayant un taux de criminalité élevé (TXCR, CRIM) à ceux ayant un taux de chômage plus important (CHOM).**
+- **Dim 4 : Capte des différences liées aux professions intermédiaires (PROF) par rapport aux cadres et ouvriers/artisnts (CADR, OUVR).**
+- **Dim 5 : Oppose les départements avec des revenus fiscaux élevés (FISC) à ceux avec une plus grande présence d’étrangers et de femmes en 1990 (ETRA, FE90).**
+
+```
+j'ai essayé d'interpréter le mieux possible bien que je ne sois pas sûr de tout
+```

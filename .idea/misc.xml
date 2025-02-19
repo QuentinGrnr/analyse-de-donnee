@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="RMarkdownSettings">
+    <option name="renderProfiles">
+      <map>
+        <entry key="file://$PROJECT_DIR$/TP3/mon_rapport.Rmd">
+          <value>
+            <RMarkdownRenderProfile>
+              <option name="lastOutput" value="$PROJECT_DIR$/TP3/mon_rapport.pdf" />
+              <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$/TP3" />
+            </RMarkdownRenderProfile>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
