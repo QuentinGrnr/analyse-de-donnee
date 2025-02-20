@@ -155,3 +155,66 @@ plot(departements.afd)
 ```
 
 # 2 Données Iris : AFD et AFD décisionnelle
+
+## Code
+Voici le code pour l'analyse discriminante des données Iris :
+
+```{r}
+data(iris)
+attach(iris)
+
+# Discrimination en 2 dimensions #
+plot(iris[,1],iris[,2],col=c("blue","red","green")[Species])
+# Discrimination en 3 dimension #
+library(rgl)
+plot3d(iris[,1],iris[,2],iris[,3],col=c("blue","red","green")[Species],type="s")
+
+# AFD
+library(ade4)
+iris.afd <- discrimin(dudi.pca(iris[,1:4],scan=FALSE),Species,scan=FALSE)
+iris.afd
+plot(iris.afd)
+```
+
+## Interprétation des valeurs propres :
+- Le premier axe discriminant (0.9699) capte l’essentiel de la variance et sépare fortement les classes.
+- Le deuxième axe (0.222) contribue faiblement mais aide à affiner la distinction entre versicolor et virginica.
+
+## Interprétation des graphiques :
+L'affichage contient plusieurs sous-plots expliquant la structure des données :
+
+### (En haut à gauche) - Poids des variables (Canonical weights)
+Petal.Width et Sepal.Width sont les variables les plus discriminantes. Ces variables expliquent comment chaque caractéristique influence la séparation des espèces.
+
+### (En bas à gauche) - Cercle des cosinus (Cosinus des variables canoniques)
+Sepal.Width et Sepal.Length influencent le premier axe. Ce graphique permet de comprendre comment les variables corrèlent avec les axes discriminants.
+
+### (Centre) - Scores et classes des individus
+Setosa est totalement séparée des autres classes. Versicolor et Virginica sont plus proches, ce qui suggère qu'elles partagent des caractéristiques similaires.
+
+### (En bas à droite) - Scores des classes
+Setosa est isolée, ce qui confirme qu'elle est bien distincte. Versicolor et Virginica sont plus proches, ce qui signifie qu'elles sont plus difficiles à discriminer.
+
+### (En bas à gauche) - Valeurs propres (Eigenvalues)
+Un histogramme montre l’importance des axes discriminants. L’axe 1 domine, ce qui confirme qu'une seule dimension suffit largement à séparer les espèces.
+
+## AFD décisionnelle
+```{r}
+library(MASS)
+train <- sample(1:150, 75)
+table(Species[train])
+iris.afd <- lda(Species ~ ., iris, prior = c(1,1,1)/3, subset = train)
+iris.afd
+pred <- predict(iris.afd, iris[-train, ])$class
+table(Species[-train],pred)
+```
+
+### Interprétation de la matrice de confusion :
+- Setosa est parfaitement classée (100% de bonnes prédictions).
+- Versicolor et Virginica sont parfois confondues (3 erreurs chacune).
+- Taux de bonne classification global : (30+21+18) / 75 = 69 / 75 = 92%
+92% de bonne classification, ce qui est très bon pour un modèle LDA.
+
+
+#### Pour réduire le taux d’erreur, on pourrait tester d’autres méthodes comme le SVM ou Random Forest. J'ai pu apprendre ces deux méthodes en Machine Learning en Erasmus
+
