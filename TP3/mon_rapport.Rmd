@@ -14,7 +14,7 @@ knitr::opts_chunk$set(tidy = TRUE, comment = NA)
 ## 1.2 Analyse en Composantes Principales (ACP)
 ### Chargement des Bibliothèques
 ```{r}
-options(repos = c(CRAN = "https://cloud.r-project.org/"))
+options(repos = c(CRAN = "https://cloud. .org/"))
 library(factoextra)
 library(ggplot2)
 ```
@@ -121,3 +121,37 @@ par(mfrow = c(1, 1))
 ```
 j'ai essayé d'interpréter le mieux possible bien que je ne sois pas sûr de tout
 ```
+
+## 1.3 AFD du tableau de départements
+```{r}
+n<-rep(0,95); n[dpt[,3]=="NPC"]<-1
+n[dpt[,3]=="Pic"]<-1; n[dpt[,3]=="HNo"]<-1
+n[dpt[,3]=="ChA"]<-1; n[dpt[,3]=="Als"]<-2
+n[dpt[,3]=="Lor"]<-2; n[dpt[,3]=="FrC"]<-2
+n[dpt[,3]=="BNo"]<-3; n[dpt[,3]=="Bre"]<-3
+n[dpt[,3]=="PaL"]<-3; n[dpt[,3]=="Cen"]<-4
+n[dpt[,3]=="Bou"]<-4; n[dpt[,3]=="PoC"]<-5
+n[dpt[,3]=="Lim"]<-5; n[dpt[,3]=="Auv"]<-6
+n[dpt[,3]=="RhA"]<-6; n[dpt[,3]=="Aqu"]<-7
+n[dpt[,3]=="MiP"]<-7; n[dpt[,3]=="LaR"]<-8
+n[dpt[,3]=="PAC"]<-8; n[dpt[,3]=="Cor"]<-8
+indice<-n>0
+m<-subset(n,n>0)
+xc<-1:95
+ind<-xc[indice]
+departements<-dpt0[ind,]
+lbls<-c("Nord","Est","Ouest","CentreNord","CentreOuest","CentreEst",
+        "SudEst","SudOuest")
+partition<-factor(m,labels=lbls)
+```
+
+### On effectue l'AFD
+```{r}
+library(ade4)
+departements.afd <- discrimin(dudi.pca(departements,scan=FALSE),
+partition,scan=FALSE)
+departements.afd
+plot(departements.afd)
+```
+
+# 2 Données Iris : AFD et AFD décisionnelle
