@@ -129,4 +129,34 @@ JO.ca
 round(JO.ca$eig,2)
 barplot(JO.ca$eig[,1],main="Valeurs propres",
         names.arg=paste("dim",1:nrow(JO.ca$eig)))
+plot(JO.ca)
+plot(JO.ca,axes=3:4)
 ```
+
+## 3.1 Analyse des profils athlétiques des pays
+
+- **Cluster des pays spécialisés en épreuves de fond et de marathon** : Des pays comme le Kenya (KEN) et l'Éthiopie (ETH) se situent à proximité des disciplines telles que le marathon et les courses de longue distance (10 000m, 5 000m). Ces nations sont reconnues pour leur domination dans les épreuves d'endurance.
+- **Cluster des pays spécialisés en épreuves de sprint** : Des nations comme les États-Unis (USA) et la Jamaïque (JAM) sont fortement associées aux épreuves courtes comme le 100m et 200m, où elles excellent historiquement. Nottement avec des athlètes comme Usain Bolt.
+- **Cluster des pays spécialisés en épreuves de lancers et de saut** : On remarque que certains pays d'Europe de l'Est et du Nord (comme la Pologne et la Hongrie) sont souvent liés aux disciplines de lancer (disque, marteau) et de saut.
+- **Cluster des pays polyvalents** : Certains pays apparaissent plus au centre du graphique, ce qui suggère une distribution plus équilibrée de leurs performances sur plusieurs disciplines.
+
+## 3.2 Analyse des profils géographiques des épreuves
+Les disciplines sportives se regroupent en fonction des caractéristiques physiques et techniques requises :
+
+- **Épreuves de fond et de demi-fond** : Ces disciplines (marathon, 10 000m, 5 000m) sont souvent liées aux pays africains qui ont historiquement dominé ces courses.
+- **Épreuves de sprint et de vitesse** : Le 100m, 200m et 400m sont généralement dominés par des nations disposant d'un bon vivier d'athlètes explosifs, comme les États-Unis et la Jamaïque.
+- **Épreuves de lancers** : Le poids, le disque et le javelot sont souvent associés aux pays d'Europe de l'Est et du Nord, où la formation et les infrastructures pour ces disciplines sont bien développées.
+- **Épreuves combinées et techniques** : Le décathlon et l'heptathlon, ainsi que les sauts en hauteur et à la perche, montrent des influences variées, avec une répartition géographique plus homogène.
+-
+## 3.3 Analyse des contributions des pays aux axes factoriels
+
+```{r}
+# Contributions pays à l'axe 1 #
+round(JO.ca$col$contrib[rev(order(JO.ca$col$contrib[,1])),1],2)
+# Contributions pays à l'axe 2 #
+round(JO.ca$col$contrib[rev(order(JO.ca$col$contrib[,2])),2],2)
+```
+
+- **Axe 1** : Il est fortement influencé par des pays spécialisés dans les épreuves d'endurance comme le Kenya et l'Éthiopie, ainsi que par des nations performantes dans des disciplines variées comme les États-Unis et la Grande-Bretagne.
+- **Axe 2** : Il met en évidence des pays plus orientés vers les épreuves techniques et combinées, avec des nations comme la Lituanie et la Biélorussie, qui se démarquent par leur contribution importante.
+
