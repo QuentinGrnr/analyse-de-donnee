@@ -1,6 +1,6 @@
 ---
 title: "Analyse en Composantes Principales (ACP)"
-author: "Analyse R"
+author: "Quentin Garnier"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output: pdf_document
 ---
@@ -160,3 +160,89 @@ round(JO.ca$col$contrib[rev(order(JO.ca$col$contrib[,2])),2],2)
 - **Axe 1** : Il est fortement influencé par des pays spécialisés dans les épreuves d'endurance comme le Kenya et l'Éthiopie, ainsi que par des nations performantes dans des disciplines variées comme les États-Unis et la Grande-Bretagne.
 - **Axe 2** : Il met en évidence des pays plus orientés vers les épreuves techniques et combinées, avec des nations comme la Lituanie et la Biélorussie, qui se démarquent par leur contribution importante.
 
+## 3.4 Analyse des profils athlétiques des pays
+Les pays représentés dans l'analyse factorielle se répartissent selon les dimensions principales. On peut observer :
+
+- **Cluster des pays spécialisés en épreuves de fond et de marathon** : Des pays comme le Kenya (KEN) et l'Éthiopie (ETH) se situent à proximité des disciplines telles que le marathon et les courses de longue distance (10 000m, 5 000m). Ces nations sont reconnues pour leur domination dans les épreuves d'endurance.
+- **Cluster des pays spécialisés en épreuves de sprint** : Des nations comme les États-Unis (USA) et la Jamaïque (JAM) sont fortement associées aux épreuves courtes comme le 100m et 200m, où elles excellent historiquement.
+- **Cluster des pays spécialisés en épreuves de lancers et de saut** : On remarque que certains pays d'Europe de l'Est et du Nord (comme la Pologne et la Hongrie) sont souvent liés aux disciplines de lancer (disque, marteau) et de saut.
+- **Cluster des pays polyvalents** : Certains pays apparaissent plus au centre du graphique, ce qui suggère une distribution plus équilibrée de leurs performances sur plusieurs disciplines.
+
+## 3.5 Analyse des profils géographiques des épreuves
+Les disciplines sportives se regroupent en fonction des caractéristiques physiques et techniques requises :
+
+- **Épreuves de fond et de demi-fond** : Ces disciplines (marathon, 10 000m, 5 000m) sont souvent liées aux pays africains qui ont historiquement dominé ces courses grâce à des conditions d'entraînement optimales en altitude.
+- **Épreuves de sprint et de vitesse** : Le 100m, 200m et 400m sont généralement dominés par des nations disposant d'un bon vivier d'athlètes explosifs, comme les États-Unis et la Jamaïque.
+- **Épreuves de lancers** : Le poids, le disque et le javelot sont souvent associés aux pays d'Europe de l'Est et du Nord, où la formation et les infrastructures pour ces disciplines sont bien développées.
+- **Épreuves combinées et techniques** : Le décathlon et l'heptathlon, ainsi que les sauts en hauteur et à la perche, montrent des influences variées, avec une répartition géographique plus homogène.
+
+## 3.6 Analyse des contributions des pays aux axes factoriels
+L'analyse des contributions des pays aux deux premiers axes factoriels permet d'identifier leur influence dans l'analyse :
+
+```{r contributions_axes}
+# Contributions des pays à l'axe 1
+round(JO.ca$col$contrib[rev(order(JO.ca$col$contrib[,1])),1],2)
+
+# Contributions des pays à l'axe 2
+round(JO.ca$col$contrib[rev(order(JO.ca$col$contrib[,2])),2],2)
+```
+
+- **Axe 1** : Il est fortement influencé par des pays spécialisés dans les épreuves d'endurance comme le Kenya et l'Éthiopie, ainsi que par des nations performantes dans des disciplines variées comme les États-Unis et la Grande-Bretagne.
+- **Axe 2** : Il met en évidence des pays plus orientés vers les épreuves techniques et combinées, avec des nations comme la Lituanie et la Biélorussie, qui se démarquent par leur contribution importante.
+
+Cette analyse met en évidence la répartition des spécialités des pays selon les axes factoriels et permet de mieux comprendre leur positionnement dans les différentes disciplines sportives.
+
+## 3.7 Conclusion
+
+1. **Les pays ont-ils le même profil athlétique ?**
+- Non, les pays n'ont pas un profil athlétique uniforme. Certains pays sont particulièrement performants dans des disciplines spécifiques en raison de facteurs culturels, historiques et environnementaux. Par exemple, les pays africains dominent les courses de fond, tandis que les nations caribéennes excellent dans le sprint.
+
+2. **Toutes les épreuves ont-elles le même profil géographique ?**
+- Non, certaines épreuves sont davantage dominées par des nations spécifiques. Par exemple, les disciplines de lancer sont souvent remportées par des pays d'Europe de l'Est, tandis que les courses de sprint sont dominées par la Jamaïque et les États-Unis.
+
+3. **Peut-on synthétiser ces spécialisations et mettre en évidence des oppositions ?**
+- Oui, il est possible d'identifier des groupes de disciplines avec des profils similaires et opposés. Par exemple :
+- Les **courses de fond et marathon** (domination africaine) s'opposent aux **courses de sprint** (domination américaine et caribéenne).
+- Les **épreuves de lancers** (Europe de l'Est) contrastent avec les **épreuves combinées et techniques**, où les performances sont plus homogènes au niveau mondial.
+- Ces oppositions sont bien visibles sur les axes factoriels, où les disciplines et les pays se regroupent en fonction de leurs performances et spécialités respectives.
+
+# 4 Données Vins Blancs
+```{r}
+vins <- read.table(file.choose(),header=TRUE,row.names=1,sep=";")
+vins
+vins.ca <- CA(vins,col.sup=11,row.sup=nrow(vins))
+vins.ca
+round(vins.ca$eig,2)
+barplot(vins.ca$eig[,1],main="Valeurs propres",
+        names.arg=1:nrow(vins.ca$eig))
+```
+Nous allons choisir les deux premiers axes factoriels pour l'analyse des vins blancs car en utilisant la helbow method, nous pouvons déterminer que ces deux axes expliquent la majorité de la variance.
+```{r}
+plot(vins.ca)
+plot(vins.ca,axes=3:4) # Souci d'exhaustivité
+```
+
+## 4.1 Interprétation des représentations factorielles
+
+**Premier plan factoriel (Dim 1 & Dim 2)** :
+
+- Axe 1 (Dim 1 - 28,93%) : Il sépare les vins ayant un profil sucré, doux, liquoreux (associés aux descripteurs sucré, miel, arômes fruités) des vins plus secs et boisés (associés aux descripteurs bois, goût étrange, pneu).
+- Axe 2 (Dim 2 - 24,67%) : Il oppose les vins ayant des odeurs soutenues et une longueur en bouche persistante à ceux ayant une faible intensité aromatique (associés aux descripteurs nez fermé, faible).
+On observe que :
+
+Les vins de Vouvray (cépage Chenin) sont plus souvent liés aux descripteurs sucré, miel, doux, liquoreux, indiquant une typicité plus marquée vers des arômes fruités et une certaine sucrosité.
+Les vins de Touraine (cépage Sauvignon) sont associés aux descripteurs acidité, sec, floral, boisé, correspondant à des profils plus secs et vifs.
+
+**Second plan factoriel (Dim 3 & Dim 4)** :
+
+- Axe 3 (Dim 3 - 12,05%) : Il distingue les vins ayant une acidité marquée et un caractère sec des vins plus discrets et neutres.
+- Axe 4 (Dim 4 - 10,35%) : Il met en opposition les vins avec une forte odeur et une expressivité aromatique contre ceux ayant un profil plus neutre et équilibré.
+On remarque que :
+Certains vins de Vouvray (Chenin) sont plus expressifs avec des notes iodées et amertume, montrant une typicité aromatique plus riche et complexe.
+Les vins de Touraine (Sauvignon) apparaissent plus frais et vifs, confirmant leur caractère sec et acide.
+
+## 4.2 Conclusion sur les typicités des vins
+
+- Les vins de Vouvray (Chenin) : souvent décrits comme fruités, sucrés, liquoreux, avec des arômes de miel et une intensité aromatique marquée.
+- Les vins de Touraine (Sauvignon) : généralement secs, floraux, acides et plus vifs, traduisant une typicité différente.
+ainsi les graphiques des représentations simultanées sont complémentaires pour une analyse fine des profils sensoriels des vins et met en avant les deux types de vins blancs et leur spécificité.
