@@ -1,11 +1,11 @@
 ---
-title: "Analyse en Composantes Principales (ACP)"
+title: "Analyse Factorielle des Correspondances Multiples (AFCM)"
 author: "Quentin Garnier"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output: pdf_document
 ---
 
-```{r setup}
+```{r}
 library(FactoMineR)
 credit0 <- read.csv(file("./credit.csv"),header=TRUE,sep=";",row.names=1)
 credit <- credit0[-68,c(1,2,3,10,11,4,5,6,7,8,9)]
@@ -156,3 +156,90 @@ conting
 
 ## 9.2. Vérification avec les données brutes
 - **Senior** est fortement lié à **Rénovation** avec **7 occurrences**.
+
+# 10. Tableau des contributions aux Chi2.
+```{r}
+Test <- chisq.test(conting,correct=FALSE)
+Test$expected # Expected Counts
+Test
+round(Test$residuals^2, 2)
+```
+## 10.1. Résultats du test
+- **Chi² = 28.036, df = 15, p-value = 0.02135**.
+- **Conclusion** : **Dépendance significative** entre **assurance** et **marché**.
+
+## 10.2. Analyse des résidus standardisés
+
+- **Scooter - Sans assurance (6.93)** → Association très forte.
+- **Scooter - AID + Chômage (3.49)** → Lien significatif.
+- **Voiture - AID (3.12)** → Présence marquée de AID dans ce marché.
+- **Voiture - AID + Chômage (2.21)** → Corrélation modérée.
+- **Île - Sans assurance (3.35)** → Lien notable.
+- **Rénovation - Senior (1.34)* → Tendance plus faible mais présente.
+
+## 10.3. Interprétation
+- Les personnes sans assurance sont sur-représentées dans l’achat de scooters et dans les marchés.
+- Les bénéficiaires de AID et AID + Chômage sont plus présents dans les marchés de la voiture et des scooters.
+- Les seniors ne sont pas fortement liés aux marchés de la rénovation, mais la tendance existe
+
+## 11. Proximité entre "Impayé 3 et plus" et "AID + Chômage"
+
+## 11.1. Analyse factorielle
+- Les deux modalités sont **proches sur le plan ACM**.
+- Indique une **corrélation forte** entre **impayés élevés et précarité**.
+
+## 11.2. Conclusion
+- **Les bénéficiaires d’AID + Chômage ont plus de risques d’avoir des impayés élevés**.
+- Cela traduit une **fragilité économique et une dépendance aux aides**.
+
+# 12. Position des modalités de la variable "Apport"
+
+## 12.1. Analyse des axes factoriels
+- **Axe 1** : Oppose **apport élevé (stabilité financière) et apport faible (endettement, aides)**.
+- **Axe 2** : Différencie les profils **jeunes actifs et ménages établis**.
+
+## 12.2. Interprétation des résultats
+- **Un apport faible est lié à l’endettement et à la précarité (AID + Chômage).**
+- **Un apport élevé est un indicateur de stabilité financière.**
+
+# 13. Variables supplémentaires
+## 13.1. Pourquoi pas de contribution ?
+- Les **variables supplémentaires** ne participent **pas à la construction des axes**.
+- **Elles sont juste projetées dans l’espace factoriel.**
+- **Donc, il est normal qu’elles n’aient pas de contribution.**
+
+## 13.2. Que signifie la valeur "test" ?
+```{r}
+res.MCA$quali.sup
+```
+
+- Elle indique **la qualité de projection des modalités supplémentaires**.
+- **Un test élevé signifie une bonne représentation** dans l’ACM.
+
+## 13.3
+```{r}
+age <- credit[,11]
+cat <- levels(age)
+col <- c("blue","green","yellow","red","black")
+colAge <- rep("blue",length(age))
+for (i in 2:length(cat)) {
+id <- credit[,11]==cat[i]
+colAge[id] <- col[i]
+}
+# plot.MCA(res.MCA, choix="ind", invisible=c("var","quali.sup","ind.sup"),col.ind=colAge)
+```
+
+je ne parvient pas a faire fonctionner ce code car une erreur survient lors de l'execution de la fonction plot.MCA due un changement dans la taille des données
+
+# 15. Définition automatique des axes
+
+```{r}
+dimdesc(res.MCA)
+```
+
+# 16. Realisation de la classification sur les composantes de l'AFCM
+```{r}
+res.HCPC <- HCPC(res.MCA, graph = FALSE)  # J'ai rajouter cette ligne car je travaille sur rmd, ainsi cela permet de ne pas afficher le graphique interactif
+plot(res.HCPC)
+```
+
