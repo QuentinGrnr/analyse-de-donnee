@@ -1,0 +1,158 @@
+---
+title: "Analyse en Composantes Principales (ACP)"
+author: "Quentin Garnier"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output: pdf_document
+---
+
+```{r setup}
+library(FactoMineR)
+credit0 <- read.csv(file("./credit.csv"),header=TRUE,sep=";",row.names=1)
+credit <- credit0[-68,c(1,2,3,10,11,4,5,6,7,8,9)]
+summary(credit)
+for (i in 1:ncol(credit)) credit[,i] <- factor(as.character(credit[,i]))
+attach(credit)
+summary(credit)
+```
+
+# 3. Que faut il avant de commencer une AFCM ?
+
+## 3.1. Vérification des données
+- **Variables catégorielles** uniquement (nominales ou ordinales).
+- Format : individus en ligne, variables en colonne.
+
+## 3.2. Taille de l’échantillon
+- \>= 5 à 10 fois le nombre total de modalités.
+
+## 3.3. Modalités rares
+- Éviter celles avec < 5 occurrences.
+- Fusionner les modalités proches si nécessaire.
+
+## 3.4. Relations entre variables
+- Vérifier la **corrélation** et **redondance**.
+
+## 3.5. Valeurs manquantes
+- Supprimer ou remplacer par une modalité “Non Répondu”.
+
+# 5. Analyse des valeurs propres et du nombre d'axes retenus
+
+```{r}
+help(MCA)
+# res.MCA=MCA(credit,quali.sup=6:11)
+res.MCA <- MCA(credit[-67,],quali.sup=6:11,graph=FALSE)
+
+res.MCA$eig
+barplot(res.MCA$eig[,1])
+```
+
+Les valeurs propres indiquent la variance expliquée par chaque axe :
+
+- Le premier axe capture **15.33%** de la variance totale.
+- Les **4 premiers axes** expliquent **58.58%** de la variance.
+- Pour atteindre **85.95%**, il faut **9 axes**, mais les derniers apportent peu d'information.
+
+#### Sélection des axes :
+- **Règle du coude** : Forte chute après **4 ou 5 axes**.
+- **Interprétation** : Les premiers axes sont les plus pertinents.
+
+```{r}
+help(plot.MCA)
+plot.MCA(res.MCA, choix="ind", col.ind="black")
+plot.MCA(res.MCA, choix="ind", invisible=c("quali.sup","ind.sup"),
+col.ind="black")
+plot.MCA(res.MCA, choix="ind", invisible=c("var","quali.sup","ind.sup"),
+col.ind="black")
+plot.MCA(res.MCA, choix="var", col.var="black")
+```
+
+# 6. Analyse globale de l'ACM
+
+## 6.1. Analyse des variables
+- **Dim 1 (15.33%)** : Oppose les profils **financièrement stables vs endettés**.
+- **Dim 2 (12.38%)** : Différencie les **profils socio-économiques** (profession, logement).
+
+## 6.2. Analyse des individus
+- Dispersion importante → bonne différenciation des profils.
+
+## 6.3. Analyse conjointe
+- **Groupes identifiables** :
+- **Endettement élevé et impayés** (rouge).
+- **Statut socio-professionnel et logement** (vert).
+- **Corrélations observées** : propriétaires vs locataires, endettement élevé vs situation stable.
+- **Variables corrélées** : Enfant et Apport, Age et Endettement.
+
+# 7. Étude des variables les plus liées aux axes
+
+```{r}
+nbvar <- 5
+variable <- NULL
+for (i in 1:nbvar) {
+  variable <- c(variable, rep(names(credit)[i], length(unique(factor(as.character(credit[-67, i]))))))
+}
+
+ctr <- res.MCA$var$contrib
+
+# Somme des contributions par variable sur l’axe 1
+contrib_axe1 <- tapply(ctr[,1], variable, sum)
+
+# Somme des contributions par variable sur l’axe 2
+contrib_axe2 <- tapply(ctr[,2], variable, sum)
+
+# Rapport de corrélation par rapport à l’axe 1
+correlation_axe1 <- contrib_axe1 * nbvar * res.MCA$eig[1,1]
+
+# Rapport de corrélation par rapport à l’axe 2
+correlation_axe2 <- contrib_axe2 * nbvar * res.MCA$eig[2,1]
+
+list(Axe1 = contrib_axe1, Corr_Axe1 = correlation_axe1,
+     Axe2 = contrib_axe2, Corr_Axe2 = correlation_axe2)
+
+```
+
+## 7.1. Variables liées à l'axe 1
+- Variables influentes : **Marché (31.23%), Endettement (27.37%), Assurance (25.16%)**.
+- L'axe 1 oppose **stabilité financière vs endettement**.
+
+## 7.2. Variables liées à l'axe 2
+- Variables influentes : **Impayé (29.08%), Assurance (28.71%), Marché (24.21%)**.
+- L'axe 2 distingue **gestion du risque et couverture financière**.
+
+# 8. Etude des mdalités
+
+```{r}
+# Contributions au axes #
+round(res.MCA$var$contrib[rev(order(res.MCA$var$contrib[,1])),1],2)
+round(res.MCA$var$contrib[rev(order(res.MCA$var$contrib[,2])),2],2)
+```
+
+## 8.1. Modalités contribuant le plus à l'axe 1
+
+- **Principales modalités** : `endettement_2 (14.20%)`, `Senior (13.63%)`, `Rénovation (12.04%)`, `Scooter (10.41%)`, `AID (7.33%)`.
+- Ces modalités sont fortement impliquées dans la **différenciation des profils financiers**.
+
+## 8.2. Modalités contribuant le plus à l'axe 2
+
+- **Principales modalités** : `AID + Chômage (19.71%)`, `Impayé_3 et + (17.75%)`, `Impayé_1 ou 2 (9.80%)`, `Mobilier / Ameublement (9.52%)`, `Rénovation (8.14%)`.
+- L'axe 2 distingue les individus selon leur **situation sociale et leur gestion du risque**.
+
+## 8.3. Position des modalités
+Ces modalités sont **souvent situées aux extrémités** du graphique, ce qui est attendu car elles expliquent la **variabilité maximale**.
+
+## 8.04. Qualité de représentation et interprétation
+- Certaines modalités ont une **forte contribution mais une faible qualité de représentation**.
+- Les résultats restent cohérents : les modalités liées à **l’endettement, aux impayés et aux aides financières** sont les plus discriminantes.
+
+# 9. Interpretation de la proximité entre Senior et assurance, rénovation et marché
+
+```{r}
+plot(assurance,marché)
+conting <- table(assurance,marché)
+conting
+```
+
+## 9.1. Analyse graphique
+- "Senior" (assurance) et "Rénovation" (marché) semblent proches.
+- "Rénovation" est plus associée à **AID + Chômage** et **Sans assurance** ce qui est cohérent avec les résultats précédents.
+
+## 9.2. Vérification avec les données brutes
+- **Senior** est fortement lié à **Rénovation** avec **7 occurrences**.

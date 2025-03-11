@@ -1,0 +1,69 @@
+"dossier";"marché";"Apport";"Impayé";"Famille";"Enfants";"Logement";"Profession";"Intitulé";"Age";"assurance";"endettement"
+1;"Rénovation";"Non";0;"Union libre";0;"Logé par la famille";"Ouvrier non qualifié";"MR";50;"AID";1
+2;"Rénovation";"Non";0;"Marié";0;"Propriétaire";"Ouvrier qualifié";"MR";40;"Sans";2
+3;"Voiture";"Oui";0;"Marié";1;"Accédant à la propriété";"Ouvrier qualifié";"MR";30;"AID";3
+4;"Rénovation";"Non";0;"Veuf";0;"Propriétaire";"Retraité";"MR";60;"Senior";2
+5;"Scooter";"Oui";"3 et +";"Union libre";0;"Logé par l'employeur";"Cadre moyen";"MR";20;"AID";4
+6;"Rénovation";"Non";0;"Marié";0;"Propriétaire";"Retraité";"MR";60;"Senior";3
+7;"Rénovation";"Oui";0;"Veuf";0;"Propriétaire";"Retraité";"MME";60;"Senior";2
+8;"Rénovation";"Oui";0;"Veuf";0;"Propriétaire";"Retraité";"MME";60;"Sans";2
+9;"Mobilier / Ameublement";"Oui";0;"Union libre";0;"Logé par l'employeur";"Ouvrier non qualifié";"MR";40;"Sans";1
+10;"Rénovation";"Oui";0;"Marié";0;"Propriétaire";"Retraité";"MR";60;"Senior";2
+11;"Voiture";"Oui";0;"Union libre";0;"Locataire";"Ouvrier non qualifié";"MLLE";20;"AID + Chomage";3
+12;"Mobilier / Ameublement";"Non";0;"Union libre";0;"Locataire";"Ouvrier qualifié";"MR";40;"AID";3
+13;"Voiture";"Oui";0;"Union libre";2;"Locataire";"Ouvrier qualifié";"MR";30;"AID";4
+14;"Mobilier / Ameublement";"Non";0;"Union libre";1;"Propriétaire";"Ouvrier qualifié";"MR";50;"AID";3
+15;"Mobilier / Ameublement";"Non";0;"Divorcé";0;"Propriétaire";"Retraité";"MR";60;"Senior";2
+16;"Mobilier / Ameublement";"Non";0;"Célibataire";0;"Locataire";"Ouvrier non qualifié";"MR";40;"AID + Chomage";3
+17;"Voiture";"Oui";0;"Marié";1;"Propriétaire";"Cadre sup.";"MR";50;"AID";1
+18;"Rénovation";"Non";"3 et +";"Marié";2;"Accédant à la propriété";"Cadre moyen";"MR";50;"Sans";4
+19;"Mobilier / Ameublement";"Non";"3 et +";"Célibataire";0;"Logé par la famille";"Ouvrier qualifié";"MR";30;"AID";1
+20;"Mobilier / Ameublement";"Non";"3 et +";"Célibataire";0;"Locataire";"Cadre moyen";"MLLE";30;"AID + Chomage";2
+21;"Voiture";"Oui";"3 et +";"Veuf";0;"Propriétaire";"Ouvrier non qualifié";"MR";40;"Sans";3
+22;"Rénovation";"Oui";0;"Marié";0;"Propriétaire";"Retraité";"MME";60;"Sans";1
+23;"Rénovation";"Non";0;"Célibataire";0;"Propriétaire";"Cadre moyen";"MR";50;"AID";1
+24;"Rénovation";"Oui";0;"Marié";2;"Propriétaire";"Ouvrier qualifié";"MR";30;"AID";3
+25;"Mobilier / Ameublement";"Oui";0;"Marié";2;"Propriétaire";"Cadre moyen";"MR";50;"AID";3
+26;"Mobilier / Ameublement";"Oui";0;"Marié";3;"Accédant à la propriété";"Cadre sup.";"MR";30;"AID";4
+27;"Rénovation";"Non";"3 et +";"Célibataire";3;"Propriétaire";"Cadre moyen";"MR";40;"AID";4
+28;"Mobilier / Ameublement";"Oui";0;"Marié";0;"Propriétaire";"Retraité";"MR";60;"Senior";1
+29;"Moto";"Oui";0;"Célibataire";0;"Locataire";"Ouvrier qualifié";"MR";30;"AID + Chomage";1
+30;"Scooter";"Oui";"1 ou 2";"Marié";3;"Locataire";"Ouvrier qualifié";"MR";20;"AID";4
+31;"Moto";"Non";"1 ou 2";"Célibataire";0;"Locataire";"Ouvrier non qualifié";"MR";30;"AID";3
+32;"Voiture";"Oui";0;"Marié";2;"Accédant à la propriété";"Cadre sup.";"MR";40;"AID";3
+33;"Rénovation";"Oui";"1 ou 2";"Union libre";0;"Locataire";"Retraité";"MR";60;"Senior";3
+34;"Moto";"Oui";0;"Marié";1;"Propriétaire";"Cadre moyen";"MR";50;"AID";2
+35;"Scooter";"Oui";0;"Union libre";1;"Locataire";"Cadre sup.";"MLLE";30;"AID";3
+36;"Rénovation";"Non";0;"Veuf";1;"Propriétaire";"Retraité";"MR";60;"Senior";1
+37;"Voiture";"Non";0;"Célibataire";0;"Locataire";"Ouvrier qualifié";"MR";20;"AID";1
+38;"Voiture";"Oui";0;"Célibataire";0;"Logé par la famille";"Ouvrier qualifié";"MR";30;"Sans";1
+39;"Moto";"Non";0;"Marié";2;"Accédant à la propriété";"Cadre moyen";"MR";40;"AID";3
+40;"Moto";"Oui";0;"Célibataire";0;"Propriétaire";"Cadre moyen";"MR";30;"Sans";2
+41;"Voiture";"Non";"3 et +";"Célibataire";0;"Logé par la famille";"Cadre sup.";"MR";30;"AID + Chomage";2
+42;"Mobilier / Ameublement";"Non";0;"Marié";2;"Propriétaire";"Ouvrier qualifié";"MR";50;"Sans";3
+43;"Voiture";"Oui";"3 et +";"Divorcé";0;"Locataire";"Ouvrier non qualifié";"MR";20;"AID + Chomage";4
+44;"Mobilier / Ameublement";"Oui";0;"Union libre";0;"Locataire";"Cadre moyen";"MR";30;"AID";3
+45;"Voiture";"Oui";"3 et +";"Marié";0;"Locataire";"Retraité";"MR";60;"Senior";2
+46;"Rénovation";"Non";0;"Marié";0;"Propriétaire";"Cadre moyen";"MR";50;"Sans";2
+47;"Moto";"Oui";0;"Marié";2;"Propriétaire";"Cadre sup.";"MR";50;"AID";4
+48;"Moto";"Non";"3 et +";"Union libre";2;"Locataire";"Ouvrier qualifié";"MR";40;"AID";4
+49;"Scooter";"Oui";0;"Divorcé";1;"Locataire";"Cadre moyen";"MME";20;"AID";3
+50;"Mobilier / Ameublement";"Non";"3 et +";"Célibataire";0;"Locataire";"Ouvrier non qualifié";"MLLE";20;"AID + Chomage";2
+51;"Voiture";"Oui";0;"Marié";3;"Locataire";"Ouvrier qualifié";"MR";30;"AID";4
+52;"Voiture";"Oui";"3 et +";"Union libre";0;"Logé par la famille";"Ouvrier qualifié";"MR";20;"AID + Chomage";1
+53;"Moto";"Non";0;"Célibataire";0;"Logé par l'employeur";"Cadre moyen";"MR";30;"Sans";1
+54;"Voiture";"Oui";0;"Célibataire";0;"Propriétaire";"Ouvrier qualifié";"MR";50;"Sans";1
+55;"Rénovation";"Non";"1 ou 2";"Célibataire";4;"Propriétaire";"Cadre sup.";"MR";50;"AID";3
+56;"Voiture";"Oui";"1 ou 2";"Marié";4;"Locataire";"Cadre sup.";"MR";30;"AID";4
+57;"Voiture";"Non";0;"Marié";3;"Accédant à la propriété";"Cadre moyen";"MME";30;"AID + Chomage";4
+58;"Scooter";"Oui";"3 et +";"Célibataire";0;"Logé par la famille";"Ouvrier qualifié";"MR";20;"AID";1
+59;"Mobilier / Ameublement";"Non";0;"Marié";2;"Propriétaire";"Cadre moyen";"MR";50;"AID";1
+60;"Mobilier / Ameublement";"Non";"3 et +";"Célibataire";0;"Locataire";"Ouvrier non qualifié";"MLLE";30;"AID + Chomage";1
+61;"Moto";"Oui";"1 ou 2";"Veuf";2;"Propriétaire";"Cadre moyen";"MME";30;"AID + Chomage";3
+62;"Mobilier / Ameublement";"Non";0;"Divorcé";0;"Locataire";"Cadre moyen";"MME";30;"AID + Chomage";1
+63;"Mobilier / Ameublement";"Non";"3 et +";"Union libre";0;"Locataire";"Ouvrier non qualifié";"MR";40;"AID";2
+64;"Rénovation";"Non";"3 et +";"Divorcé";3;"Propriétaire";"Ouvrier non qualifié";"MME";30;"AID";4
+65;"Voiture";"Oui";"1 ou 2";"Marié";1;"Locataire";"Ouvrier qualifié";"MR";20;"AID + Chomage";4
+66;"Rénovation";"Non";"1 ou 2";"Marié";0;"Propriétaire";"Retraité";"MR";60;"Senior";2
+67;"île";"Non";0;"Pacsé";8;"Propriétaire";"Ministre";"MME";50;"Sans";1
+68;"mqt";"mqt";"mqt";"mqt";"mqt";"mqt";"mqt";"mqt";"mqt";"mqt";"mqt"

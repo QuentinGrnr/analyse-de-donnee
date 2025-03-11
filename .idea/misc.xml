@@ -29,6 +29,14 @@
             </RMarkdownRenderProfile>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/TP5/TP5.rmd">
+          <value>
+            <RMarkdownRenderProfile>
+              <option name="lastOutput" value="$PROJECT_DIR$/TP5/TP5.pdf" />
+              <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$/TP5" />
+            </RMarkdownRenderProfile>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
